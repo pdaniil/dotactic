@@ -1,0 +1,76 @@
+a {
+	text-decoration: none;
+}
+.outOfValidate {
+	color: red;
+}
+
+.invisible {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+
+}
+.visible {
+	position: relative;
+	top:0px;
+	left: 0px;
+}
+
+.color-red {
+	color: #B12222;
+}
+.color-white {
+	color: white;
+	margin-left: 20px;
+}
+
+.color_white {
+	color: white;
+}
+.color_white:hover {
+	color: white;
+}
+
+.headerLogin {
+	margin-top: 100px;
+}
+
+.offcanvas {
+	width: 340px;
+}
+.offcanvas-header {
+	background: #191919;
+	color: white;
+}
+#adminModal {
+	width: 400px;
+	height: 400px;
+}
+#successRectangle{
+	width:40px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: #067606;
+
+	
+}
+#errorRectangle {
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: #C73B3B;
+	margin-bottom: 15px;
+
+
+	
+}
+
+.successActive{
+	box-shadow:0 0 15px #004600;
+}
+
+.errorActive {
+	background-color: #FF0000;
+	box-shadow:0 0 15px #640505;
+}

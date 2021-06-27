@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Главная страница</title>
+	<link rel="icon" href="img/logo/icon.png" >
+	<link rel="stylesheet" href="style/bootstrap-5.0.0-beta3/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+		
+		<div class="container">
+			
+			<a href="#" class="navbar-brand">DOTACTIC</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" area-controls="navbarContent" aria-expandet="false">
+				<span class="navbar-toggler-icon"></span>
+				
+			</button>
+
+
+
+
+			
+			<div class="collapse navbar-collapse" id="navbarContent">
+				<ul class="navbar-nav mr-auto mb-2">
+					
+
+
+				</ul>
+
+
+			</div>
+			<div class="d-flex">
+				<button class="btn btn-outline-primary mx-1" id="buttonLogin" data-bs-toggle="modal" data-bs-target="#loginModal">Вход</button>
+				<button class="btn btn-outline-secondary mx-1" id="buttonSign" data-bs-toggle="modal" data-bs-target="#regModal">Регистрация</button>
+
+			</div>
+		</div>
+	</nav>
+
+	
+
+	<!-- ФОРМА ВХОДА НА САЙТ -->
+	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modat-title" id="loginModal">Введите ваш логин и пароль</h5>
+					<button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						<div class="row mb-3">
+							<label for="inputLogin" class="col-sm-2 col-form-label my-1">Логин</label>
+							<div class="col-sm-10 my-1">
+								<input type="text" class="form-control" id="inputLoginLogin">
+
+							</div>
+							<label for="inputPass" class="col-sm-2 col-form-label my-1">Пароль</label>
+							<div class="col-sm-10 my-1">
+								<input type="password" class="form-control" id="inputPassLogin">
+							</div>
+						</div>
+						<div class="errorLogin">
+							
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+					<button class="btn btn-success" id="btnLogin">Войти</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- ФОРМА РЕГИСТРАЦИИ -->
+	<div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="regModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modat-title" id="regModal">Регистрация</h5>
+					<button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="" class="needs-validation" novalidate>
+						<div class="row mb-3">
+							<label for="inputLogin" class="col-sm-2 col-form-label my-1">Логин</label>
+							<div class="col-sm-10 my-1">
+								<input type="text" class="form-control" id="inputLoginSign" required>
+								<div class="outOfValidate">
+									
+								</div>
+							</div>
+							<label for="inputPass" class="col-sm-2 col-form-label my-1">Пароль</label>
+							<div class="col-sm-10 my-1">
+								<input type="password" class="form-control" id="inputPassSign" required>
+								<div class="outValidPass">
+									
+								</div>
+							</div>
+							<label for="inputPass" class="col-sm-2 col-form-label my-1">Повторите пароль</label>
+							<div class="col-sm-10 my-1">
+								<input type="password" class="form-control" id="againPassSign" required>
+								<div class="outValidPassRepeat">
+									
+								</div>
+							</div>
+						</div>
+						<div class="allValide">
+							
+						</div>
+						<p style="opacity: 0.5">*После успешной регистрации страница перезагрузится, после чего Вы сможете войти на сайт.</p>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+					<button class="btn btn-success" onclick="validation()">Зарегестрироваться</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- -------------------------------------- -->
+	<main>
+		
+		<div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="img/slider/1.jpg" alt="">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="img/slider/2.jpg" alt="">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="img/slider/3.jpg" alt="">
+				</div>
+			</div>
+		</div>
+		
+		<a href="TestCase/index.html"><h1>Тест страница</h1></a>
+		<!-- CANVAS ИМИТАЦИЯ ЛИЧНОГО КАБИНЕТА -->
+
+		<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+			<div class="offcanvas-header">
+				<h2 class="offcanvas-title" id="offCanvasHeader"></h2>
+				<button type="button" id="btnClosePerson" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+			</div>
+			<div class="offcanvas-body">
+				<div>
+					<h4>Текущий КПД: </h4> <div class="mb-2 pb-2"style=" box-shadow: 0 3px 0.2px rgba(45,45,256,0.1);" ><h4 id="placeKPD"> 12%</h4></div>
+
+					<h4 style="margin-top: 70px;">Настройки: </h4>
+					<form action="">
+						<div class="row mb-3">
+							<label for="inputShop" class="col-sm-8 col-form-label my-1">Открытие лавки:</label>
+							<div class="col-sm-4 my-1">
+								<input style="width: 40px;" maxlength="1" type="text" class="form-control" id="openShop">
+							</div>
+							<label for="bringItem" class="col-sm-8 col-form-label my-1">Доставить предмет:</label>
+							<div class="col-sm-4 my-1">
+								<input style="width: 40px;" maxlength="1" type="text" class="form-control" id="bringItem">
+							</div>
+							<label for="awnser" class="col-sm-8 col-form-label my-2">Включение подсказок:</label>
+							<div class="col-sm-4 my-3">
+								<input class="form-check-input" type="checkbox" id="flexCheckChecked" checked>
+							</div>
+						</div>
+						
+					</form>
+					<button class="btn btn-primary" id="saveSetting">Сохранить</button>
+				</div>
+
+
+			</div>
+			<div class="footer-offcanvas text-center mb-3 pd-3" style="border-top: 1px solid grey; padding-top: 15px;">
+				<button id="btnStartTrainerPerson" class="btn btn-success mr-5 col-10">Начать тренировку</button>
+			</div>
+		</div>
+		<div class="container my-5">
+			<div class="row">
+				<div class="col-sm-12 col-md-4"><img class="d-block w-100" src="img/slider/1.jpg" alt=""></div>
+				<div class="col-md-8"  style="text-align: center;">
+					<h2>О проекте</h2>
+					<p>Dotactic&nbsp;– это простой в&nbsp;освоении киберспортивный тренажер, при помощи которого Вы&nbsp; можете усовершенствовать свои навыки поиска и&nbsp; покупки предметов.</p>
+				</div>
+			</div>
+			<h2 class="text-center my-5">Как играть?</h2>
+			<div class="row">
+				<div class="col-md-4  text-center col-sm-6">
+					<h4>Шаг 1</h4>
+					<p>После прохождения авторизаци и&nbsp;регистрации Вам необходимо перейти в&nbsp;личный кабинет, нажав на&nbsp;свой логин в&nbsp;правом верхнем углу экрана.</p>
+				</div>
+				<div class="col-md-4 text-center col-sm-6">
+					<h4>Шаг 2</h4>
+					<p>Настройте горячие клавиши для удобства тренировки, после нажмите кнопку «Сохранить», чтобы изменения вступили в&nbsp;силу.</p>
+				</div>
+				<div class="col-md-4 text-center col-sm-6">
+					<h4>Шаг 3</h4>
+					<p>Нажмите «Начать тренировку». Для того, чтобы ввести название очередного предмета, необходимо нажать горячую клавишу «Открытие лавки».</p>
+				</div>
+				<div class="col-md-4 text-center col-sm-6">
+					<h4>Шаг 4</h4>
+					<p>Для проверки правильности введённого названия&nbsp;– нажмите клавишу Enter. Если загорится зелёный круг&nbsp;– можете нажать клавишу «Доставить предмет», для перехода к следующему. В&nbsp;противном случае введите название заново.</p>
+				</div>
+				<div class="col-md-4 text-center col-sm-6">
+					<h4>Шаг 5</h4>
+					<p>Результат будет сохранён только в&nbsp;случае, если время на&nbsp;таймере подойдёт к&nbsp;концу.</p>
+				</div>
+				<div class="col-md-4 text-center col-sm-6">
+					<h4>Примечание</h4>
+					<p>Ваш результат за&nbsp; текущую попытку будет выведен во всплывающем окне в&nbsp;правом нижнем углу экрана. Ваш общий КПД(кол-во предметов за 60 секунд) будет виден в&nbsp;Личном кабинете.</p>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<!-- MODAL-ИМИТАЦИЯ АДМИН-ПАНЕЛИ -->
+	<!-- Добавление предмета в БД -->
+	<button style="top: -9999px; left: -9999px; position: absolute;" type="button" class="btn btn-primary" id="btnOpenModalAddItemAdmin" data-bs-toggle="modal" data-bs-target="#addItemAdmin">
+		Открыть добавление предметов
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="addItemAdmin" tabindex="-1" aria-labelledby="addItemAdminLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="addItemAdminLabel">Добавление предмета</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+
+					<label for="nameItemAdmin" class="form-label">Название предмета</label>
+					<input  type="text" class="form-control" id="nameItemAdmin" aria-describedby="emailHelp">
+					<label for="srcItemAdmin" class="form-label">Ссылка на картинку</label>
+					<input type="text" class="form-control" id="srcItemAdmin" aria-describedby="emailHelp">
+					<div class="errorAdminItem">
+						
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+					<button type="button" id="actionAddItemAdmin" class="btn btn-primary">Добавить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Отображение предметов из БД -->
+	<button style="top: -9999px; left: -9999px; position: absolute;" type="button" class="btn btn-primary" id="btnOpenModalShowItemAdmin" data-bs-toggle="modal" data-bs-target="#showItemAdmin">
+		Открыть показ предметов
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="showItemAdmin" tabindex="-1" aria-labelledby="showItemAdminLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="addItemAdminLabel">Имеющиеся предметы в базе данных</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body" >
+					<div class="container" >
+						<div class="row" id="cardItemPlace">
+							
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+
+			</div>
+		</div>
+	</div>
+
+	<!-- ИЗМЕНЕНИЕ КАРТОчЕК ПРЕДМЕТОВ -->
+	<button style="top: -9999px; left: -9999px; position: absolute;" type="button" class="btn btn-primary" id="btnOpenModalUpdateItemAdmin" data-bs-toggle="modal" data-bs-target="#updateItemAdmin">
+		Открыть добавление предметов
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="updateItemAdmin" tabindex="-1" aria-labelledby="updateItemAdminLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="addItemAdminLabel">Обновление карточки</h5>
+					<button type="button" id="closeUpdateWindow" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+
+					<label for="nameItemAdmin" class="form-label">Название предмета</label>
+					<input  type="text" class="form-control" id="nameItemAdminUpdate" aria-describedby="emailHelp">
+					<label for="srcItemAdmin" class="form-label">Ссылка на картинку</label>
+					<input type="text" class="form-control" id="srcItemAdminUpdate" aria-describedby="emailHelp">
+					<div class="errorAdminItemUpdate">
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+					<button type="button" id="actionUpdateItemAdmin" class="btn btn-primary">Изменить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- TRAINER -->
+
+	<button  style="top: -9999px; left: -9999px; position: absolute;" id="openWindowTrainer" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+		Launch static backdrop modal
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Тренажёр</h5>
+					<button style="top: -9999px; left: -9999px; position: absolute;" id="btnTargetForTrainer">asd</button>
+					<button  type="button" id="btnClosePicWindow" class="btn-close btnEndGame" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<button  style="top: -9999px; left: -9999px; position: absolute;" id="openShopTrainer" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					Кнопка с data-target
+				</button>
+				<div class="modal-body">
+					<div class="container" style="border-bottom: 1px solid black;">
+						<div class="row">
+							<div class="col-3">
+							</div>
+							<div class="col-3">
+								<div id="successRectangle" class="col-2">
+									&nbsp;
+								</div>
+							</div>
+							<div class="col-3">
+								<div id="errorRectangle" class="col-2">
+									&nbsp;
+								</div>
+							</div>
+							<div class="col-3">
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div style="height: 50px;" class="row">
+							<button style="top: -9999px; left: -9999px; position: absolute;" id="btnTargetInputName">submit</button>
+							<div class="col-9 collapse" id="collapseExample" style="margin-top: 15px;">
+								<input style="width: 400px;" type="text" id="itemNameTrainerInput" class="form-control danger" autofocus>
+							</div>
+						</div>
+					</div>
+					<div class="container" style="border-top: 1px solid #000; margin-top: 15px; padding-top: 15px;">
+						<div class="row">
+							<div class="col-9">
+								<div  style="margin-left: 12px; margin-top: 12px; font-size: 24px;" id="helpPlace">
+									Aghanim 
+								</div>
+							</div>
+							<div class="col-3">
+								<div id="imgTrainerPlace">
+
+								</div>
+							</div>
+							
+							
+						</div>
+					</div>
+					
+					
+				</div>
+				<div class="modal-footer">
+					<div style="font-size: 24px; color: green; margin-right: 200px;" id="output">
+
+					</div>
+					<button type="button" id="btnCloseWordWindow" class="btn btn-secondary btnEndGame" data-bs-dismiss="modal">Закрыть</button>
+					<button type="button" id="btnRestart" class="btn btn-primary">Начать заново</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<button style="top: -9999px; left: -9999px; position: absolute;" type="button" class="btn btn-primary" id="liveToastBtn">Показать лайв тосты</button>
+
+	<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+		<div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<img src="..." class="rounded me-2" alt="...">
+				<strong class="me-auto">Dotactic</strong>
+				<small>Только что</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+			</div>
+			<div class="toast-body">
+				Ваш результат был сохранён.
+				<p id="resLive"></p>
+			</div>
+		</div>
+	</div>
+
+
+
+	<footer style="overflow-x: hidden;" class="pt-1 my-md-2 pt-md-2 border-top text-center">
+		<div class="row">
+			<div class="col-12 col-md">
+				<h5>DOTACTIC</h5>
+				<ul class="list-unstyled text-small">
+					<li>Создатель сайта - Проскурин Даниил</li>
+					<li>Ссылка на <a href="">Группу вк</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<script src="style/bootstrap-5.0.0-beta3/dist/js/bootstrap.js"></script>
+	<script src="script/checkSession.js"></script>
+	<script src="script/settingTrainer.js"></script>
+	<script src="script/trainer.js"></script>
+	<script src="script/signup.js"></script>
+	<script src="script/login.js"></script>
+	<script src="script/admin.js"></script>
+</body>
+</html>
